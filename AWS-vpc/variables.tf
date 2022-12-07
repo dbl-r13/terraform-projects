@@ -7,7 +7,7 @@ variable "vpc_name" {
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
-  default     = "10.0.0.0/16"
+  default     = "13.0.0.0/16"
 }
 
 variable "vpc_azs" {
@@ -19,13 +19,13 @@ variable "vpc_azs" {
 variable "vpc_private_subnets" {
   description = "Private subnets for the VPC"
   type        = list(string)
-  default     = ["10.0.12.0/24", "10.0.14.0/24"]
+  default     = ["13.0.12.0/24", "13.0.14.0/24"]
 }
 
 variable "vpc_public_subnets" {
   description = "Public subnets for the VPC"
   type        = list(string)
-  default     = ["10.0.13.0/24", "10.0.15.0/24"]
+  default     = ["13.0.13.0/24", "13.0.15.0/24"]
 }
 
 
