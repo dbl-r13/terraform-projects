@@ -22,3 +22,23 @@ module "vpc" {
 
   tags = var.vpc_tags
 }
+
+module "vpc_sg" {
+  source = "terraform-aws-modules/security-group/aws"
+
+  name        = "testing-service"
+  description = "Security group for testing-service with custom ports open within VPC."
+  vpc_id      = module.vpc.vpc_id
+
+  ingress_cidr_blocks = [var.vpc_cidr]
+  ingress_rules       = ["http-80-tcp"]
+  ingress_with_cidr_blocks = [
+    {
+      from_port   = 8080
+      to_port     = 8080
+      protocol    = "tcp"
+      description = "Testing-service ports"
+      cidr_blocks = var.vpc_cidr
+    }
+  ]
+}
