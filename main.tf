@@ -13,3 +13,10 @@ module "vpc" {
 
 }
 
+module "s3" {
+  source = "./AWS-s3"
+}
+
+module "compute" {
+  source = "./AWS-compute"
+}
