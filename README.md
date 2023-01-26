@@ -13,5 +13,3 @@
 ## AWS-vpc:
 
 #### The vpc folder is one that houses the AWS VPC module that has some crucial outputs that get passed to the AWS-compute folder for the creation of the EC2 instance. It creates the VPC (with multiple AZs, public subnets and private subnets), and a Security Group with a custom rule.
-
-## I created all of these separate modules so that you can run it all together, or go into them separately and Terraform Apply them separately. **Both ways work properly**
