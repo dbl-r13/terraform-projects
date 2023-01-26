@@ -11,3 +11,7 @@ output "vpc_private_subnets" {
 output "vpc_name" {
   value = var.vpc_name
 }
+
+output "vpc_sg_ids" {
+  value = module.vpc_sg.security_group_id
+}
