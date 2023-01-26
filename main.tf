@@ -18,5 +18,7 @@ module "s3" {
 }
 
 module "compute" {
-  source = "./AWS-compute"
+  source             = "./AWS-compute"
+  vpc_public_subnets = module.vpc.vpc_public_subnets
+  vpc_sg_ids         = module.vpc.vpc_sg_ids
 }
